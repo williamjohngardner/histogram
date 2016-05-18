@@ -18,4 +18,6 @@ for word in text.split(" "):
         histogram[word] = 1
 
 sorted_hist = sorted(histogram.items(), key=operator.itemgetter(1))
-print(sorted_hist[:-20:-1])
+for idx, item in enumerate(sorted_hist[:-21:-1]):
+    word, count = item
+    print(idx + 1, word, count)
