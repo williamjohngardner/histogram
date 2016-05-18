@@ -33,6 +33,11 @@ for word in text.split(" "):
             histogram[word] = 1
 
 sorted_hist = sorted(histogram.items(), key=operator.itemgetter(1))
+
 for idx, item in enumerate(sorted_hist[:-21:-1]):
+    large = sorted_hist[:-21:-1][0][1]
     word, count = item
-    print(idx + 1, word, count)
+    bar = "#" * int(count * (50/large))
+
+    print('{:<2}  {:<11}  {} ({})'.format(idx + 1, word, bar, count))
+
